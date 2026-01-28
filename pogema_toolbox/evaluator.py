@@ -55,9 +55,9 @@ def sequential_backend(algo_config, env_configs, full_algo_name, registry_state=
 
             directory = Path(f'renders/{full_algo_name}/')
             name = env.pick_name(env.grid_config)
-
+            
             directory.mkdir(parents=True, exist_ok=True)
-            ToolboxRegistry.debug(f'Saving animation to "{directory / name}"')
+            ToolboxRegistry.info(f'Saving animation to "{directory / name}"')
             env.save_animation(name=directory / name)
     return results
 
@@ -364,6 +364,12 @@ def evaluation(evaluation_config, eval_dir=None):
                         scenario_copy['agents_xy'] = scenario_copy['agents_xy'][:num_agents]
                         scenario_copy['targets_xy'] = scenario_copy['targets_xy'][:num_agents]
                 current_cfg['num_agents'] = len(scenario_copy['agents_xy'])
+
+                if 'num_charges' in current_cfg:
+                    num_charges = current_cfg['num_charges']
+                    if num_charges < len(scenario_copy['charges_xy']):
+                        scenario_copy['charges_xy'] = scenario_copy['charges_xy'][:num_charges]
+                current_cfg['num_charges'] = len(scenario_copy['charges_xy'])
                 
                 if scenario_value['map_name'] in maps:
                     if scenario_value['map_name'] not in maps:

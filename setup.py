@@ -30,7 +30,7 @@ def find_version(*file_paths):
 
 
 setup(
-    name='pogema-toolbox',
+    name='pogema-charge-toolbox',
     author='Alexey Skrynnik',
     license='Apache License 2.0',
     version=find_version("pogema_toolbox", "__init__.py"),
@@ -48,7 +48,7 @@ setup(
         "pydantic>=1.8.2,<=1.9.1",
         "pandas<=2.2.1",
         "PyYAML<=6.0.1",
-        "pogema @ git+https://github.com/Cognitive-AI-Systems/pogema.git"
+        #"pogema @ git+https://github.com/Cognitive-AI-Systems/pogema.git"
     ],
     extras_require={
 

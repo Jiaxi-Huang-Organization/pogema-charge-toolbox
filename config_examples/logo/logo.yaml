@@ -7,8 +7,10 @@ environment:
     grid_search: [ pogema-logo, pogema-logo ]
   num_agents:
     grid_search: [ 8, 16 ]
+  num_charges:
+    grid_search: [ 2, 4 ]
   seed:
-    grid_search: [ 0, 1, 2 ]
+    grid_search: [0]
   with_animation: True
 algorithms:
   A-Star:
