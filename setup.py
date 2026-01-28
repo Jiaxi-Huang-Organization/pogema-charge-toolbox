@@ -46,6 +46,7 @@ setup(
         "importlib-metadata==4.13.0",
         "dask[distributed]",
         "pydantic>=1.8.2,<=1.9.1",
+        "typing-extensions==4.5.0",
         "pandas<=2.2.1",
         "PyYAML<=6.0.1",
         #"pogema @ git+https://github.com/Cognitive-AI-Systems/pogema.git"

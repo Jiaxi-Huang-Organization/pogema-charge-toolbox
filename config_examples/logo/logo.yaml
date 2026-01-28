@@ -8,9 +8,9 @@ environment:
   num_agents:
     grid_search: [ 8, 16 ]
   num_charges:
-    grid_search: [ 2, 4 ]
+    grid_search: [ 2, 4, 32 ]
   seed:
-    grid_search: [0]
+    grid_search: [ 0, 1, 2 ]
   with_animation: True
 algorithms:
   A-Star:
