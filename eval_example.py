@@ -1,6 +1,6 @@
 from pogema_toolbox.evaluator import evaluation
 from pogema import BatchAStarAgent
-
+from pogema import Follower
 
 from pathlib import Path
 
@@ -9,7 +9,7 @@ import yaml
 from pogema_toolbox.create_env import create_env_base, Environment
 from pogema_toolbox.registry import ToolboxRegistry
 
-PROJECT_NAME = 'pogema-toolbox'
+PROJECT_NAME = 'pogema-charge-toolbox'
 BASE_PATH = Path('config_examples')
 
 
