@@ -23,6 +23,8 @@ class ProvideGlobalObstacles(Wrapper):
 
     def get_global_targets_xy(self):
         return self.grid.get_targets_xy()
+    def get_global_charges_xy(self):
+        return self.grid.get_charges_xy()
 
 
 class MultiMapWrapper(Wrapper):
