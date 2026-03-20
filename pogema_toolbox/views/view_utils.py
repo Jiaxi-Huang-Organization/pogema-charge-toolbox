@@ -17,7 +17,12 @@ class View(BaseModel):
     rename_fields: dict = {"algorithm": "Algorithm",
                            "num_agents": "Number of Agents",
                            "avg_throughput": "Average Throughput",
+                           "avg_relative_battery": "Average Battery Precentage of all agent",
+                           "avg_throughput_with_active": "Average Throughput consider active episode",
+                           "avg_charging_per_agent": "Average Charging Per Agent",
+                           "avg_goal_battery_relative": "Average Battery Precentage of all agent when goal reached",
                            "runtime": "Runtime (seconds)",
+                           "valid_episode_relative": "Valid Episode Length Relative to Episode Length",
                            "max_episode_steps": "Episode Length"
                            }
     rename_algorithms: dict = {}

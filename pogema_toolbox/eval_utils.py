@@ -7,7 +7,20 @@ import yaml
 
 from pathlib import Path
 
-
+def initialize_wandb(config, eval_dir, disable_wandb, project_name):
+    if disable_wandb:
+        print("Weights & Biases logging is disabled.")
+        return
+    
+    # 初始化 wandb
+    wandb.init(
+        project=project_name,
+        config=config,
+        dir=eval_dir,
+        resume="allow"  # 允许从上次中断的地方恢复
+    )
+    print("Weights & Biases initialized successfully.")
+    
 def seeded_configs_to_scenarios_converter(env_configs):
     scenarios = {}
 
