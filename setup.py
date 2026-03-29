@@ -50,7 +50,7 @@ setup(
         "typing-extensions>=4.15.0; python_version >= '3.10'",
         "pandas<=2.2.1",
         "PyYAML<=6.0.1",
-        "pogema-charge @ https://github.com/Jiaxi-Huang-Organization/pogema-charge.git"
+        #"pogema-charge @ https://github.com/Jiaxi-Huang-Organization/pogema-charge.git"
     ],
     extras_require={
 
