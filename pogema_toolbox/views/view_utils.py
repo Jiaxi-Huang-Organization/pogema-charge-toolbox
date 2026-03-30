@@ -16,14 +16,16 @@ class View(BaseModel):
     round_digits: int = 2
     rename_fields: dict = {"algorithm": "Algorithm",
                            "num_agents": "Number of Agents",
+                           "num_charges": "Number of Charges",
                            "avg_throughput": "Average Throughput",
-                           "avg_relative_battery": "Average Battery Precentage of all agent",
-                           "avg_throughput_with_active": "Average Throughput consider active episode",
+                           "avg_relative_battery": "Average Battery Precentage",
+                           "avg_throughput_with_active": "Average Throughput with Active Agents",
+                           "avg_goal_battery_relative": "Average Goal Battery Percentage",
                            "avg_charging_per_agent": "Average Charging Per Agent",
-                           "avg_goal_battery_relative": "Average Battery Precentage of all agent when goal reached",
+                           'avg_charging_rate': "Average Charged Percentage",
                            "runtime": "Runtime (seconds)",
-                           "valid_episode_relative": "Valid Episode Length Relative to Episode Length",
-                           "max_episode_steps": "Episode Length"
+                           "valid_episode_relative": "Average Active Episode Percentage",
+                           "max_episode_steps": "Max Episode Length"
                            }
     rename_algorithms: dict = {}
     sort_by: Union[str, List[str]] = None
