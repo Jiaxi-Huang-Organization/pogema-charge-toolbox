@@ -370,7 +370,12 @@ def evaluation(evaluation_config, eval_dir=None):
                     if num_charges < len(scenario_copy['charges_xy']):
                         scenario_copy['charges_xy'] = scenario_copy['charges_xy'][:num_charges]
                 current_cfg['num_charges'] = len(scenario_copy['charges_xy'])
-                
+                if 'agent_per_charge' in current_cfg:
+                    num_charges = current_cfg['num_charges'] / current_cfg['agent_per_charge']
+                    if num_charges < len(scenario_copy['charges_xy']):
+                        scenario_copy['charges_xy'] = scenario_copy['charges_xy'][:num_charges]
+                    del current_cfg['agent_per_charge']
+                current_cfg['num_charges'] = len(scenario_copy['charges_xy'])
                 if scenario_value['map_name'] in maps:
                     if scenario_value['map_name'] not in maps:
                         ToolboxRegistry.error(f'Map {scenario_value["map_name"]} not found in registry')
@@ -382,6 +387,11 @@ def evaluation(evaluation_config, eval_dir=None):
                 env_configs.append(current_cfg)
     else:
         configs_changes, env_configs = zip(*generate_variants(evaluation_config['environment']))
+        for cfg_changes, env_cfg in zip(configs_changes, env_configs):
+            if 'agent_per_charge' in env_cfg:
+                num_charges = env_cfg['num_agents'] // env_cfg['agent_per_charge']
+                env_cfg['num_charges'] = num_charges
+                del env_cfg['agent_per_charge']
 
     results = []
     for key, algo_cfg in evaluation_config['algorithms'].items():
