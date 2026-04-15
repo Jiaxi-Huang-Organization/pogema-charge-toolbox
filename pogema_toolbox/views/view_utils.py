@@ -94,13 +94,20 @@ def check_seeds(results):
         if 'num_agents' not in env_data:
             ToolboxRegistry.error("No num_agents in env_grid_search data")
             return
-
+        if 'max_episode_steps' not in env_data:
+            ToolboxRegistry.error("No max_episode_steps in env_grid_search data")
+            return
+        if 'agent_per_charge' not in env_data:
+            ToolboxRegistry.error("No agent_per_charge in env_grid_search data")
+            return  
         if 'seed' not in env_data:
             ToolboxRegistry.error("No seed in env_grid_search data")
             return
 
         map_name = res['env_grid_search']['map_name']
         num_agents = res['env_grid_search']['num_agents']
+        max_episode_steps = res['env_grid_search']['max_episode_steps']
+        agent_per_charge = res['env_grid_search']['agent_per_charge']
         seed = res['env_grid_search']['seed']
         algo = res['algorithm']
         algorithms.add(algo)
